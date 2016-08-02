@@ -1,7 +1,7 @@
 module Main where
 
-import qualified Lib3
+import qualified Lib4
 
 main :: IO ()
-main = Lib3.main
+main = Lib4.main
 
