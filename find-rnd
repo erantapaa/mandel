@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+import time
+import subprocess
+
+cmd = ".stack-work/install/x86_64-osx/lts-6.0/7.10.3/bin/mandel-exe"
+
+
+def main():
+  # 1142825 - 6
+  rnd = 1142820
+  while True:
+    start = time.time()
+    print "--- testing seed", rnd
+    subprocess.call([cmd, str(rnd)])
+    duration = time.time() - start
+    print "rnd:", rnd, "time:", duration
+    rnd += 1
+
+def test():
+  start = time.clock()
+  time.sleep(10)
+  end = time.clock()
+  print end - start
+
+main()
+
